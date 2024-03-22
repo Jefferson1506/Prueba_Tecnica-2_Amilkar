@@ -44,6 +44,19 @@ Widget Logo(BuildContext context) {
   );
 }
 
+Widget Icono_decore(
+    BuildContext context, String logo, double alto, double ancho) {
+  return Container(
+    width: MediaQuery.sizeOf(context).width * ancho,
+    height: MediaQuery.sizeOf(context).height * alto,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            filterQuality: FilterQuality.high,
+            fit: BoxFit.cover,
+            image: AssetImage(logo))),
+  );
+}
+
 Future AnimacionCarga(BuildContext context) {
   return showDialog(
       barrierColor: Color.fromARGB(180, 244, 246, 252),
@@ -79,7 +92,7 @@ class CajaTexto extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         filled: true,
-        fillColor: const Color.fromARGB(255, 158, 165, 216),
+        fillColor: const Color.fromARGB(255, 251, 243, 213),
         hintText: hintText,
         hintStyle: estiloTextoAzul(23),
         enabledBorder: OutlineInputBorder(

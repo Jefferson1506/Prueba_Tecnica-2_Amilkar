@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/registro.dart';
 import 'package:flutter_application_1/widgets/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,7 +27,7 @@ class LoginPage extends StatelessWidget {
             top: MediaQuery.of(context).size.height * 0.14,
             child: Logo(context),
           ),
-         Positioned(
+          Positioned(
             top: MediaQuery.of(context).size.height * 0.40,
             child: Container(
               width: MediaQuery.of(context).size.width * 0.9,
@@ -64,12 +65,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width * 0.75,
               height: MediaQuery.of(context).size.height * 0.055,
-              child: Boton(
-                  texto: "Ingresar",
-                  size: 23,
-                  onpressed: () async {
-                    
-                  }),
+              child: Boton(texto: "Ingresar", size: 23, onpressed: () async {}),
             ),
           ),
           Positioned(
@@ -77,9 +73,10 @@ class LoginPage extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.3,
-                 child: TextButton(
+              child: TextButton(
                 onPressed: () {
-                 
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Registro()));
                 },
                 child: TextosAzul(texto: "¿No tienes cuenta?", size: 17),
               ),
